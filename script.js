@@ -1,4 +1,4 @@
-// Start project
+// / Start project
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -28,7 +28,7 @@ const createProductItemElement = ({ sku, name, image }) => {
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
 const cartItemClickListener = (event) => {
-  // coloque seu código aqui
+  
 };
 
 const createCartItemElement = ({ sku, name, salePrice }) => {
@@ -53,6 +53,18 @@ const addProductsSection = async () => {
   });
 };
 
+const addProducts = () => {
+  const cartItems = document.querySelector('.cart__items');
+  const addButtons = document.querySelectorAll('.item__add');
+  addButtons.forEach((button) => button.addEventListener('click', async () => {
+    const product = button.parentNode;
+    const productId = product.firstElementChild.innerText;
+    const productInfo = await fetchItem(productId);
+    const { id, title, price } = productInfo;
+    cartItems.appendChild(createCartItemElement({ sku: id, name: title, salePrice: price }));
+  })); 
+};
 window.onload = async () => {
   await addProductsSection();
+  addProducts();
 };
