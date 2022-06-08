@@ -39,7 +39,7 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
 
 const addProductsSection = async () => {
   const productElement = await fetchProducts();
-  
+
   productElement.forEach(({ id, title, thumbnail }) => {
     const setItem = createProductItemElement({
       sku: id,
