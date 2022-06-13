@@ -74,8 +74,17 @@ const addProducts = () => {
   })); 
 };
 
+const removeAllItems = () => {
+  const button = document.querySelector('.empty-cart');
+  button.addEventListener('click', () => {
+    ol.innerHTML = '';
+    localStorage.clear();
+  });
+};
+
 window.onload = async () => {
   await addProductsSection();
   addProducts();
   saveLocalStorage();
+  removeAllItems();
 };
