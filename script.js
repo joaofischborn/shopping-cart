@@ -82,9 +82,24 @@ const removeAllItems = () => {
   });
 };
 
+const addElement = () => {
+  const items = document.querySelector('.items');
+  const loading = document.createElement('div');
+  loading.classList = 'loading';
+  loading.innerText = 'carregando...';
+  items.appendChild(loading);
+};
+addElement();
+
+const removeElement = () => {
+  const loading = document.querySelector('.loading');
+  loading.remove();
+};
+
 window.onload = async () => {
   await addProductsSection();
   addProducts();
   saveLocalStorage();
   removeAllItems();
+  removeElement();
 };
