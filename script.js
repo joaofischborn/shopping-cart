@@ -29,18 +29,19 @@ const createProductItemElement = ({ sku, name, image }) => {
 
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
-const saveLocalStorage = () => {
-  const items = getSavedCartItems();
-  ol.innerHTML = items;
-};
-
 const sumValues = () => {
   const li = document.querySelectorAll('.cart__item');
   let price = 0;
   li.forEach((element) => {
     price += parseFloat(element.innerHTML.split('$')[1]);
   });
-  total.innerText = price;
+  total.innerText = `R$: ${price}`;
+};
+
+const saveLocalStorage = () => {
+  const items = getSavedCartItems();
+  ol.innerHTML = items;
+  sumValues();
 };
 
 const cartItemClickListener = (event) => {
