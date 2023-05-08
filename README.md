@@ -1,10 +1,13 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+<h1 align="center">Shopping Cart</h1>
+
+# Sobre o projeto
+Adicione produtos vindo de uma API, ao seu carrinho, que lhe mostra o valor total da compra
+
+<img src="./images/shoppingcart.png" alt="drawing" width="500"/>
+
+# Tecnologias utilizadas
+- HTML
+- CSS
+- Javascript
+
+O projeto tem o objetivo de por em prática os conceitos de **fetch e localStorage**
